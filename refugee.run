@@ -1,0 +1,13 @@
+model refugee.mod;
+data refugee.dat;
+option solver gurobi;
+
+for {n in 1..12} {
+	   display n;
+	   solve;
+	   display X;
+	   display E;
+		for	{i in A}{
+	   		let X_prev[i] := X[i];
+	   		}
+	}
